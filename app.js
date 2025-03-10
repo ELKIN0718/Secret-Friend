@@ -1,1 +1,33 @@
-// El principal objetivo de este desafío es fortalecer tus habilidades en lógica de programación. Aquí deberás desarrollar la lógica para resolver el problema.
+let nombreAmigo = document.querySelector('#amigo');
+let lista = document.querySelector('#listaAmigos'); //lista UL
+let resultado = document.querySelector('#resultado');//lista UL
+let array = [];
+
+function agregarAmigo(){
+    
+    if(nombreAmigo.value != ''){
+        let nombreIngreso = document.createElement('li');
+        nombreIngreso.textContent = nombreAmigo.value;
+        lista.appendChild(nombreIngreso);
+        array.push(nombreAmigo.value);
+        condicionesIniciales();
+    }else{
+        textoElemento('Debes ingresar un nombre', 'h2');
+    };
+    
+    console.log(array);
+};
+
+function condicionesIniciales(){
+    // respecto al titulo
+    textoElemento('Digite el nombre de sus amigos', 'h2');
+    //Celda de entrada se vacía
+    nombreAmigo.value = '';
+
+};
+
+function textoElemento(texto, elemento){
+    let a = document.querySelector(elemento);
+    a.innerHTML = texto;
+    return;
+};
