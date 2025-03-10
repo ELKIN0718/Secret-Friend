@@ -13,16 +13,25 @@ function agregarAmigo(){
         condicionesIniciales();
     }else{
         textoElemento('Debes ingresar un nombre', 'h2');
+        alert('Ingresa un nombre válido');
     };
     
-    console.log(array);
+};
+
+function sortearAmigo(){
+    let random = Math.floor(Math.random()*array.length);
+    let escogido = array[random];
+
+    resultado.innerHTML = '';
+    resultado.innerHTML = escogido;
 };
 
 function condicionesIniciales(){
     // respecto al titulo
     textoElemento('Digite el nombre de sus amigos', 'h2');
-    //Celda de entrada se vacía
+    //Celda de entrada y resultado se vacía
     nombreAmigo.value = '';
+    resultado.innerHTML = '';
 
 };
 
